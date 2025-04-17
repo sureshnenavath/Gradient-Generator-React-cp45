@@ -13,11 +13,7 @@ const GradientDirectionItem = ({
 
   return (
     <ListEl>
-      <DirectionButton
-        onClick={onHandleChangeTab}
-        isActive={isActive}
-        data-testid="gradientGenerator"
-      >
+      <DirectionButton onClick={onHandleChangeTab} isActive={isActive}>
         {displayText}
       </DirectionButton>
     </ListEl>

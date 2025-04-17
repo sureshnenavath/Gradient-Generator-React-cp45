@@ -38,3 +38,6 @@ export const DirectionButton = styled.button`
     color: #ffffff;
   }
 `
+export const ChooseColor = styled.p`
+color:white;
+`

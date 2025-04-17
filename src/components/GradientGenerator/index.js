@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import GradientDirectionItem from '../GradientDirectionItem'
-import {UlElement, MainDiv} from './styledComponents.js'
+import {UlElement, MainDiv, ChooseColor} from './styledComponents.js'
 
 const gradientDirectionsList = [
   {directionId: 'TOP', value: 'top', displayText: 'Top'},
@@ -42,12 +42,13 @@ const GradientGenerator = () => {
 
   return (
     <MainDiv
+      data-testid="gradientGenerator"
       firstGradient={firstGradient}
       secondGradient={secondGradient}
       activeDirectionTab={activeDirectionTab}
     >
       <h1>Generate a CSS color Gradient</h1>
-      <p>Choose Direction</p>
+      <ChooseColor>Choose Direction</ChooseColor>
       <UlElement>
         {gradientDirectionsList.map(eachItem => (
           <GradientDirectionItem
@@ -58,12 +59,15 @@ const GradientGenerator = () => {
           />
         ))}
       </UlElement>
+      <ChooseColor>Pick the Colors</ChooseColor>
       <div>
+        <p>{firstColorInput}</p>
         <input
           type="color"
           value={firstColorInput}
           onChange={handleFirstColorChange}
         />
+        <p>{secondColorInput}</p>
         <input
           type="color"
           value={secondColorInput}
